@@ -29,7 +29,8 @@ int main()
             {
                 int prevSwather = timeArray[(i-1)*numStages + j];
                 int prevStage = timeArray[i*numStages + j-1];
-                //Add max of previous swather completign stage or previous stage of same swather
+                //Add max of time for previous swather to complete stage
+                // and time for previous stage of same swather to complete
                 if(prevSwather > prevStage)
                     timeArray[i*numStages + j] += prevSwather;
                 else
