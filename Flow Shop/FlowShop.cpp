@@ -18,12 +18,12 @@ int main()
                 cin >> timeArray[i*numStages + j];
         //Process the first row
         for(int i = 1; i < numStages; i++)
-            timeArray[i] += timeArray[i-1];
+            timeArray[0*numStages + i] += timeArray[0*numStages + i-1];
         //Process all other rows
         for(int i = 1; i < numSwathers; i++)
         {
             //Calculate when first stage finishes
-            timeArray[i*numStages] += timeArray[(i-1)*numStages];
+            timeArray[i*numStages + 0] += timeArray[(i-1)*numStages + 0];
             //Calculate the rest of the stages
             for(int j = 1; j < numStages; j++)
             {
